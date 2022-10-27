@@ -100,13 +100,14 @@ class Card extends HTMLElement{
             </style>
         `
     }
-    
     getTemplate(){
-        care.svg
+        const firstletter = this.title.charAt()
+        const letterLowerCase = firstletter.toLowerCase()
+        const nameIcon = this.title.replace(firstletter,letterLowerCase)
         const card = document.createElement('template')
         card.innerHTML = `
             <div class="col2-Background ${this.title}">
-                <img alt='image-card' class='col2-Background-Image' src='https://github.com/SergioParraL/time-tracking-dashboard-main/blob/master/images/icon-self-${this.title}.svg'>
+                <img alt='image-card' class='col2-Background-Image' src='./images/icon-${nameIcon}.svg'>
             </div>
             <article class="col2-Card-Information DarkBlue-Color">
                 <div class='col2-row1'>
