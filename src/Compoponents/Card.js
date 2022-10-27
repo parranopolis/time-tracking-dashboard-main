@@ -101,6 +101,7 @@ class Card extends HTMLElement{
         `
     }
     getTemplate(){
+        
         const firstletter = this.title.charAt()
         const letterLowerCase = firstletter.toLowerCase()
         const nameIcon = this.title.replace(firstletter,letterLowerCase)
