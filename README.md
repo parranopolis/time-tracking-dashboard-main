@@ -67,7 +67,7 @@ For the futures projects I will to practice CSS Grid advanced, and learn too Rea
 
 ## Author
 
-- Website - [Sergio Parra](https://www.your-site.com)
+- Website - [Sergio Parra](https://sergioparral.github.io/PortFolio/)
 - Frontend Mentor - [@SergioParraL](https://www.frontendmentor.io/profile/SergioParraL)
 - Twitter - [@Parranopolis00](https://twitter.com/Parranopolis00)
 
