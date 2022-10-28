@@ -105,7 +105,7 @@ class Card extends HTMLElement{
                     float: right;
                     margin-right: 1rem;
                 }
-                @media (max-width: 710px){
+                @media (max-width: 770px){
                     .col2-Card-Information{
                         height: 4.5rem;
                         padding: 1rem 2rem;
