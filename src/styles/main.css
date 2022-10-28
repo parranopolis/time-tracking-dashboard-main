@@ -4,12 +4,10 @@ body{
     font-weight: 300;
     font-size: 14px;
     background-color: rgb(14,19,34);
-   
+
 }
-@media (min-width: 700px) {
-    .main-Wrapper{
-        display: flex;
-    }
+.main-Wrapper{
+    margin: 1rem;
 }
 .Card{
     height: 7rem;
@@ -20,9 +18,6 @@ body{
 .larger-Text{
     font-size: 22px;
     font-weight: 500;
-}
-.col1{
-    height: 10.2rem;
 }
 
 .col1-Presentation-Card{ 
@@ -75,7 +70,52 @@ body{
     background-color: red;
 }
 
-
 .Work{
     background-color: blue;
+}
+
+.attribution { 
+    font-size: 15px; 
+    text-align: center; 
+    margin: 1rem;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media (min-width: 710px) {
+    .main-Wrapper{
+        max-width: 1020px;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 20% 80%;
+        margin: 10% auto 0 auto;
+    }
+    .col1{
+        display: flex;
+        flex-direction: column;
+        background-color: hsl(235, 46%, 20%);
+        border-radius: 1rem ;
+
+    }
+    .col1-Option-Card {
+        flex-direction: column;
+        justify-content: space-between;
+        line-height: 1.9rem;
+        margin-left: 1rem;
+        background-color: transparent;
+    }
+    .col1-Presentation-Card{
+        position: relative;
+        z-index: 10;        
+        height: 265px;
+
+    }
+    .col2{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(3, 29%);
+        grid-template-rows: repeat(2, auto);
+        gap:  1.5rem 1.5rem;
+    }
 }
