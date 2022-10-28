@@ -52,48 +52,81 @@ class Card extends HTMLElement{
                     --font-size-primary: 14px;
                     --col2-background-color : red;
                     margin-bottom: -1rem;
-                }@media (max-width: 700px){
+                }
+                .col2-Card-Information{
+                    background: var(--primary-color);
+                    border-radius: 1rem;
+                    height: 150px;
+                    position: relative;
+                    bottom: 1rem;
+                    z-index: 10;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                }
+                .col2-Card-Information:hover{
+                    background: var(--secondary-color);
+                }
+                .col2-row2{
+                    align-items: center;
+                }
+                .col2-row2-hour{
+                    font-size: 3rem;
+                }
+                .col2-row2-time{
+                    color: rgb(162, 152, 255);
+                }
+                
+                .${this.title}{
+                    background-color: ${background};
+                }
+                
+                .col2-Background{
+                    border-radius: 1rem;
+                    position: relative;
+                    z-index: 9;
+                    top: 0;
+                    overflow: hidden;
+                    height: 3rem;
+                }
+                .col2-row1{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0 1rem 0;
+                }
+                .col2-row2 > span{
+                    display:block;
+                    margin: 0 1rem;
+                }
+                
+                .col2-Background-Image{
+                    position: relative;
+                    bottom: .5rem;
+                    float: right;
+                    margin-right: 1rem;
+                }
+                @media (max-width: 710px){
                     .col2-Card-Information{
-                        background: var(--primary-color);
                         height: 4.5rem;
-                        border-radius: 1rem;
                         padding: 1rem 2rem;
                         position: relative;
                         z-index: 10;
                         bottom: 2.5rem;
                     }
-                    .col2-Card-Information:hover{
-                        background: var(--secondary-color);
-                    }
-                    .col2-row1,.col2-row2{
+                    .col2-row2{
                         display: flex;
                         justify-content: space-between;
                     }
+                    .col2-row1{
+                        padding:0;
+                    }
+                    
                     .col2-row1 .row1-title{
                         font-size: var(--font-size-primary);
                         font-weight: 400;
                     }
-                    .col2-row2{
-                        align-items: center;
-                    }
-                    .col2-row2-hour{
-                        font-size: 3rem;
-                    }
-                    .col2-row2-time{
-                        color: rgb(162, 152, 255);
-                    }
                     .col2-Background{
                         height: 5rem;
-                        border-radius: 1rem;
-                        position: relative;
-                        z-index: 9;
-                        top: 0;
-                    }
-                    .${this.title}{
-                        background-color: ${background};
-                    }
-                    .col2-Background-Image{
-                        float: right;
                     }
                 }   
                 
@@ -101,7 +134,7 @@ class Card extends HTMLElement{
         `
     }
     getTemplate(){
-        
+
         const firstletter = this.title.charAt()
         const letterLowerCase = firstletter.toLowerCase()
         const nameIcon = this.title.replace(firstletter,letterLowerCase)
