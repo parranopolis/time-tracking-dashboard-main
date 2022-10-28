@@ -83,7 +83,7 @@ body{
     color: hsl(228, 45%, 44%); 
 }
 
-@media (min-width: 710px) {
+@media (min-width: 770px) {
     .main-Wrapper{
         max-width: 1020px;
         display: grid;
@@ -96,21 +96,31 @@ body{
         flex-direction: column;
         background-color: hsl(235, 46%, 20%);
         border-radius: 1rem ;
-
+        min-height: 388px;
     }
     .col1-Option-Card {
         flex-direction: column;
+        bottom: 4rem;
         justify-content: space-between;
         line-height: 1.9rem;
         margin-left: 1rem;
         background-color: transparent;
+        padding-top: 4.7rem;
     }
     .col1-Presentation-Card{
         position: relative;
         z-index: 10;        
-        height: 265px;
-
+        height: 245px;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1.5rem 0 0 1.5rem;
+        align-items: flex-start;
     }
+    .Presentation-Card-name{
+        font-size: 2.5rem;
+    }
+
+
     .col2{
         display: grid;
         justify-content: center;
