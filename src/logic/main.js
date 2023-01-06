@@ -1,5 +1,6 @@
 const $jsonData = './data.json'
 const $col2 = document.querySelector('.col2')
+const $option = document.querySelectorAll('.option')
 
 const setAttributeF = (obj,time)=>{
     let timeChoose 
@@ -33,10 +34,36 @@ const upDateTemplateData = (data) =>{
     })
     // console.log(main)
 }
-
-const option = document.querySelectorAll('.option')
-
-option.forEach(element => {
+const fetchData = (textContent)=>{
+    fetch($jsonData)
+        .then(res => res.json())
+        .then(data => {
+            if($col2.childElementCount == 0){
+                for (let i = 0; i < data.length; i++) {
+                    let key = data[i]
+                    const setAttribute = setAttributeF(key,textContent)
+                    createTemplate(setAttribute)
+                }
+            }else{
+                const main = document.querySelectorAll('card-template')
+                main.forEach(element => {
+                    element.parentElement.removeChild(element)
+                })
+                for (let i = 0; i < data.length; i++) {
+                    let key = data[i]
+                    
+                    const setAttribute = setAttributeF(key,textContent)
+                    createTemplate(setAttribute)
+                }
+            }
+        })
+        .catch(err => console.error(err))
+}
+$option.forEach(element => {
+    const className = element.childNodes[0].classList[0]
+    if( className == 'active'){
+        fetchData(element.textContent)
+    } 
     element.addEventListener('click', (e)=>{
         const textContent = e.target.textContent
         let tag = e
@@ -45,29 +72,6 @@ option.forEach(element => {
             desActice.classList.remove('active')
         }
         tag.target.classList.add('active')
-        fetch($jsonData)
-            .then(res => res.json())
-            .then(data => {
-                if($col2.childElementCount == 0){
-                    for (let i = 0; i < data.length; i++) {
-                        let key = data[i]
-                        const setAttribute = setAttributeF(key,textContent)
-                        createTemplate(setAttribute)
-                    }
-                }else{
-                    const main = document.querySelectorAll('card-template')
-                    main.forEach(element => {
-                        element.parentElement.removeChild(element)
-                    })
-                    for (let i = 0; i < data.length; i++) {
-                        let key = data[i]
-                        
-                        const setAttribute = setAttributeF(key,textContent)
-                        createTemplate(setAttribute)
-                    }
-                }
-            })
-            .catch(err => console.error(err))
+        fetchData(textContent)
     })
-
 });
