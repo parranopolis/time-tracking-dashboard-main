@@ -10,17 +10,17 @@ class Card extends HTMLElement{
     }
 
     attributeChangedCallback(attr,oldVal,newVal){
-        if(attr === 'title'){
-            this.title = newVal
+        if(oldVal != newVal){
+            this[attr] = newVal
         }
-        if(attr === 'time'){
-            this.time = newVal
+        if(oldVal != newVal){
+            this[attr] = newVal
         }
-        if(attr === 'current'){
-            this.current = newVal
+        if(oldVal != newVal){
+            this[attr] = newVal
         }
-        if(attr === 'previous'){
-            this.previus = newVal
+        if(oldVal != newVal){
+            this[attr] = newVal
         }
        
         
